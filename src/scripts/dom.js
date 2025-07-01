@@ -6,13 +6,13 @@
 export function showResult({status, message, data}) {
     let output = document.getElementById(`output`);
 
-    output.textContent = status === `success` ? `` + message: `Resultado: ${data.result}`;
+    output.textContent = status === `ok` ? `` + message: `Resultado: ${data.result}`;
     output.style.color = status === `error` ? ' red' : `green`;
 
 }
 
 export function updateHistory ({status, data}) {
-    if (status !== 'success') return;
+    if (status !== 'ok') return;
     let historyList = document.getElementById('historyList');
     const list = document.createElement('li');
 

@@ -35,7 +35,7 @@ export function fizzbuzz(input) {
         if (inputResult === ``) inputResult = inputNumber.toString();
 
         return {
-            status: `success`,
+            status: `ok`,
             message: `Número procesado correctamente`,
             data: {
                 number: inputNumber,
