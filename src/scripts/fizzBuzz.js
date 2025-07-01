@@ -10,3 +10,39 @@
             }
     }
  * */ 
+
+
+export function fizzbuzz(input) {
+    try {
+        let inputNumber = Number(input);
+        if (isNaN(inputNumber)) throw new Error (`El valor ingresado no es un número`);
+        if (inputNumber <= 0) throw new Error (`El valor debe ser mayor a 0`);
+
+        let inputResult = ``;
+        let fizz = inputNumber % 3 === 0;
+        let buzz = inputNumber % 5 === 0;
+
+        if(fizz) inputResult += `Fizz`;
+        if(buzz) inputResult += `Buzz`;
+        
+        if (inputResult === ``) inputResult = inputNumber-toString();
+
+        return {
+            status: `success`,
+            message: `Número procesado correctamente`,
+            data: {
+                number: inputNumber,
+                result: inputResult,
+            }
+        };
+    } catch (error) {
+        return {
+            status: `error`,
+            message: error.message,
+            data: {
+                number: inputNumber,
+                result: ``,
+            }
+        }
+    }
+}

@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arnau Pérez">
+
     <title>FizzBuzz DOM</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/css" />
 </head>
-<body>
-    
+<body class="bg-light d-flex justify-content-center py-5">
+    <main class="bg-white p-4 rounded shadow-sm w-100" style="max-width:
+    400px;">
+        <h1 class="text-center mb-4">FizzBuzz</h1>
+            <div class="mb-3">
+                <input type="text" id="numberInput" class="form-control" placeholder="Introduce un número" />
+            </div>
+
+        <button id="submitBtn" class="btn btn-primary w-100">Procesar</button>
+            <div id="output" class="text-center mt-4 fw-bold"></div>
+
+        <h2 class="mt-4">Historial</h2>
+            <ul id="historyList" class="list-group mt-2"></ul>
+    </main>
+
+    <script type="module" src="src/scripts/events.js"></script>
 </body>
 </html>
