@@ -41,7 +41,7 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
              */
 
             // Arrange
-            let valor_entrada = 5;
+            let valor_entrada = 10;
             let respuesta_esperada = {
                 status: "ok", // Código indicando éxito
                 message: "El número es divisible por 5", // Mensaje de validación
