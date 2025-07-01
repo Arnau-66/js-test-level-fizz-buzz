@@ -7,7 +7,6 @@
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
-  
   "author": "Manuela Grajales Duque",
   "license": "ISC",
   "devDependencies": {
