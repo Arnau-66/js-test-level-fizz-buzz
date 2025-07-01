@@ -2,7 +2,6 @@
  * Responsabilidad: gestionar el los flujos de que recibe y muestra la interfáz
  * */ 
 
-
 export function showResult({status, message,}) {
     let output = document.getElementById(`output`);
 
