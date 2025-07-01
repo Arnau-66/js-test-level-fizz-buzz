@@ -12,7 +12,7 @@
  * */ 
 
 
-export function fizzbuzz(input) {
+export function fizzBuzz(input) {
 
     if (input === ``) {
         output.textContent = `Debes ingresar un número`;

@@ -2,7 +2,7 @@
  * Responsabilidad: gestionar los eventos
  * */ 
 
-import { fizzbuzz } from "./fizzBuzz.js";
+import { fizzBuzz } from "./fizzBuzz.js";
 import { showResult, updateHistory } from "./dom.js";
 
 
@@ -12,7 +12,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     button.addEventListener(`click`, () => {
         let value = input.value;
-        let result = fizzbuzz(value);
+        let result = fizzBuzz(value);
         showResult(result);
         updateHistory(result);
     })
