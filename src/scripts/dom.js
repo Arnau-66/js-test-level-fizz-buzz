@@ -3,10 +3,10 @@
  * */ 
 
 
-export function showResult({status, message, data}) {
+export function showResult({status, message,}) {
     let output = document.getElementById(`output`);
 
-    output.textContent = status === `ok` ? `` + message: `Resultado: ${data.result}`;
+    output.textContent = status === `ok` ? `` + message: `Error: ${error.message}`;
     output.style.color = status === `error` ? ' red' : `green`;
 
 }
