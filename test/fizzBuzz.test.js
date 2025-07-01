@@ -1,5 +1,5 @@
 import { expect, describe, test } from "@jest/globals";
-import { fizzBuzz } from "../src/fizzBuzz";
+import { fizzBuzz } from "../src/scripts/fizzBuzz.js";
 
 describe('FizzBuzz test for multiples of 3 and 5', () => {
        
