@@ -13,7 +13,14 @@
 
 
 export function fizzbuzz(input) {
+
+    if (input === ``) {
+        output.textContent = `Debes ingresar un número`;
+        output.style.color = 'red';
+        }
+
     try {
+
         let inputNumber = Number(input);
         if (isNaN(inputNumber)) throw new Error (`El valor ingresado no es un número`);
         if (inputNumber <= 0) throw new Error (`El valor debe ser mayor a 0`);
@@ -25,7 +32,7 @@ export function fizzbuzz(input) {
         if(fizz) inputResult += `Fizz`;
         if(buzz) inputResult += `Buzz`;
         
-        if (inputResult === ``) inputResult = inputNumber-toString();
+        if (inputResult === ``) inputResult = inputNumber.toString();
 
         return {
             status: `success`,
