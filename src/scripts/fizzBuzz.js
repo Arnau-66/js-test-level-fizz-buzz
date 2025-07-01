@@ -45,7 +45,7 @@ export function fizzBuzz(input) {
     } catch (error) {
         return {
             status: `error`,
-            message: Error.message,
+            message: error.message,
             data: {
                 number: ``,
                 result: input,
