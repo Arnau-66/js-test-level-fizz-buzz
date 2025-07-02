@@ -18,11 +18,11 @@ export function fizzBuzz(input) {
             status: `error`,
             message: `Debes ingresar un número`,
             data: {
-                number:``,
+                input:``,
                 result: input,
             }
-        }
-        }
+        };
+    }
 
     try {
 
@@ -30,21 +30,31 @@ export function fizzBuzz(input) {
         if (isNaN(inputNumber)) throw new Error (`El valor ingresado no es un número`);
         if (inputNumber <= 0) throw new Error (`El valor debe ser mayor a 0`);
 
-        let inputResult = ``;
-        let fizz = inputNumber % 3 === 0;
-        let buzz = inputNumber % 5 === 0;
+        let divisibleBy3 = inputNumber % 3 === 0;
+        let divisibleBy5 = inputNumber % 5 === 0;
+        let output = ``;
 
-        if(fizz) inputResult += `Fizz`;
-        if(buzz) inputResult += `Buzz`;
+        if (divisibleBy3) output += `Fizz`;
+        if (divisibleBy5) output += `Buzz`;
+        if (!divisibleBy3 && !divisibleBy5) output = inputNumber;
         
-        if (inputResult === ``) inputResult = inputNumber.toString();
+        let message = ``;
+        if (divisibleBy3 && divisibleBy5) {
+            message = `El número es divisible por 3 y por 5`;
+        } else if (divisibleBy3) {
+            message = `El número es divisible por 3`;
+        } else if (divisibleBy5){
+            message = `El número es divisible por 5`;
+        } else {
+            message = 'El númro no es divisible por 3 ni por 5';
+        }
 
         return {
             status: `ok`,
-            message: `Número procesado correctamente`,
+            message,
             data: {
-                number: inputNumber,
-                result: inputResult,
+                input: inputNumber,
+                output
             }
         };
     } catch (error) {
@@ -52,8 +62,8 @@ export function fizzBuzz(input) {
             status: `error`,
             message: error.message,
             data: {
-                number: ``,
-                result: input,
+                input: ``,
+                output: input,
             }
         }
     }
