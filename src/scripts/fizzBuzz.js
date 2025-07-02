@@ -46,7 +46,7 @@ export function fizzBuzz(input) {
         } else if (divisibleBy5){
             message = `El número es divisible por 5`;
         } else {
-            message = 'El númro no es divisible por 3 ni por 5';
+            message = `El número no es divisible por 3 ni por 5`;
         }
 
         return {
