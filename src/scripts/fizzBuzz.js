@@ -14,8 +14,14 @@
 export function fizzBuzz(input) {
 
     if (input === ``) {
-        output.textContent = `Debes ingresar un número`;
-        output.style.color = 'red';
+        return {
+            status: `error`,
+            message: `Debes ingresar un número`,
+            data: {
+                number:``,
+                result: input,
+            }
+        }
         }
 
     try {
