@@ -11,59 +11,48 @@
     }
  * */ 
 
-export function fizzBuzz(input) {
-
-    if (input === ``) {
-        return {
-            status: `error`,
-            message: `Debes ingresar un número`,
-            data: {
-                input:``,
-                result: input,
-            }
-        };
-    }
-
-    try {
-
+export function fizzBuzz(input){
+    try{
         let inputNumber = Number(input);
-        if (isNaN(inputNumber)) throw new Error (`El valor ingresado no es un número`);
-        if (inputNumber <= 0) throw new Error (`El valor debe ser mayor a 0`);
+        if(input === ``) throw new Error (`Debes introducir un número`);
+        if(isNaN(inputNumber)) throw new Error (`El valor ingresado no es un número`);
+        if(inputNumber <= 0) throw new Error (`El valor debe ser mayor a 0`);
 
-        let divisibleBy3 = inputNumber % 3 === 0;
-        let divisibleBy5 = inputNumber % 5 === 0;
         let output = ``;
-
-        if (divisibleBy3) output += `Fizz`;
-        if (divisibleBy5) output += `Buzz`;
-        if (!divisibleBy3 && !divisibleBy5) output = inputNumber;
-        
         let message = ``;
-        if (divisibleBy3 && divisibleBy5) {
+        let fizz = inputNumber % 3 === 0;
+        let buzz = inputNumber % 5 === 0;
+
+        if(fizz && buzz) {
+            output += `FizzBuzz`;
             message = `El número es divisible por 3 y por 5`;
-        } else if (divisibleBy3) {
-            message = `El número es divisible por 3`;
-        } else if (divisibleBy5){
-            message = `El número es divisible por 5`;
+        } else if (fizz){ 
+            output += `Fizz`;
+            message = 'El número es divisible por 3';
+        } else if (buzz){ 
+            output += `Buzz`;
+            message = 'El número es divisible por 5';
         } else {
-            message = `El número no es divisible por 3 ni por 5`;
+            output = inputNumber;
+            message = `El número no es divisible por 3 y por 5`;
         }
 
         return {
             status: `ok`,
-            message,
+            message: message,
             data: {
-                input: inputNumber,
-                output
+               input: input,
+               output: output 
             }
         };
+    
     } catch (error) {
         return {
             status: `error`,
             message: error.message,
             data: {
-                input: ``,
-                output: input,
+                input: input,
+                output: ''
             }
         }
     }

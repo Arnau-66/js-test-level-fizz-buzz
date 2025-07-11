@@ -5,6 +5,7 @@
 import { fizzBuzz } from "./fizzBuzz.js";
 import { showResult, updateHistory } from "./dom.js";
 
+
 document.addEventListener(`DOMContentLoaded`, () => {
     let input = document.getElementById(`numberInput`);
     let button = document.getElementById(`submitBtn`);

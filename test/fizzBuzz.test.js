@@ -1,5 +1,5 @@
 import { expect, describe, test } from "@jest/globals";
-import { fizzBuzz } from "../src/scripts/fizzBuzz.js";
+import { fizzBuzz } from "../src/scripts/fizzBuzz";
 
 describe('FizzBuzz test for multiples of 3 and 5', () => {
        
@@ -51,11 +51,11 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
                 }}
             // Act
             let resultado = fizzBuzz(valor_entrada);
-
+            
             // Assert
             expect(typeof resultado.data.input).toBe("number"); // valida que input sea un número
             expect(resultado).toEqual(respuesta_esperada); // valida estructura de respuesta
-            expect(resultado.data.output).toBe("Buzz"); // valida que el valor output corresponda al expect
+            expect(resultado.data.output).toBe("Buzz"); // valida que el valor output corresponda al expect   
         })
 
         test('returns FizzBuzz when multiple of 3 and 5', () => {
@@ -76,10 +76,9 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
                     input: 15,  // Número evaluado
                     output: "FizzBuzz" // Resultado esperado
                 }}
-
             // Act
             let resultado = fizzBuzz(valor_entrada);
-
+            
             // Assert
             expect(typeof resultado.data.input).toBe("number"); // valida que input sea un número
             expect(resultado).toEqual(respuesta_esperada); // valida estructura de respuesta
@@ -94,20 +93,18 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
              * When el número es procesado
              * Then se muestra el número ingresado
              */
-
             // Arrange
             let valor_entrada = 8;
             let respuesta_esperada = {
                 status: "ok", // Código indicando éxito
-                message: "El número no es divisible por 3 ni por 5", // Mensaje de validación
+                message: "El número no es divisible por 3 y por 5", // Mensaje de validación
                 data: {
                     input: 8,  // Número evaluado
-                    output: valor_entrada // Resultado esperado
+                    output: 8 // Resultado esperado
                 }}
-            
             // Act
             let resultado = fizzBuzz(valor_entrada);
-
+            
             // Assert
             expect(typeof resultado.data.input).toBe("number"); // valida que input sea un número
             expect(resultado).toEqual(respuesta_esperada); // valida estructura de respuesta
